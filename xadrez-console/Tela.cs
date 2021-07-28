@@ -28,7 +28,7 @@ namespace xadrez_console
             }
             Console.WriteLine("  a b c d e f g h");
         }
-        public static void ImprimirTabuleiro(Tabuleiro tab,bool[,] posicoesPossiveis)
+        public static void ImprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
         {
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             //ConsoleColor fundoAlterado = Console.
@@ -38,16 +38,7 @@ namespace xadrez_console
                 Console.Write(8 - i + " ");
                 for (int j = 0; j < tab.Colunas; j++)
                 {
-                    if (tab.Peca(i, j) == null)
-                    {
-                        Console.Write("- ");
-                    }
-                    else
-                    {
-                        ImprimirPeca(tab.Peca(i, j));
-                        Console.Write(" ");
-                    }
-
+                    ImprimirPeca(tab.Peca(i, j));
                 }
                 Console.WriteLine();
             }
@@ -67,12 +58,10 @@ namespace xadrez_console
         {
             if (peca == null)
             {
-                Console.Write(" ");
+                Console.Write("- ");
             }
             else
             {
-
-
                 if (peca.Cor == Cor.Branca)
                 {
                     Console.Write(peca);
